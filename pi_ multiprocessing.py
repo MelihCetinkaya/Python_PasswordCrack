@@ -1,5 +1,3 @@
-import keyword
-import random
 import multiprocessing
 import random
 import numpy as np
@@ -42,7 +40,5 @@ def pi(accuracy: float = 1.0e-5, number_of_processes: int = 1) -> float:
 
 
 if __name__ == "__main__":
-    multiprocessing.set_start_method("fork")
+    multiprocessing.set_start_method('spawn')
     print(pi(number_of_processes=os.cpu_count()))
- 
-   

@@ -13,3 +13,10 @@ def generatePassword():
 
 plain_password, hashed_password = generatePassword()
 print(f"MD5 Hash: {hashed_password}")
+
+# git init
+# git add .
+# git commit -m "ilk"
+# git branch -M master
+# git remote add origin https://github.com/MelihCetinkaya/Python_PasswordCrack.git
+# git push -u origin master
