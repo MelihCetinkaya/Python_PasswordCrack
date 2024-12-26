@@ -7,20 +7,22 @@ import json
 
 app = Flask(__name__)
 
+generated_password = ""
 
 def generate_password():
-    password = "".join(
+    generated_password = "".join(
         random.choices(string.ascii_letters + string.digits, k=random.randint(8, 16))
     )
-    return hashlib.md5(password.encode()).hexdigest()
+    print("Generated Password: " + generated_password)
+    return hashlib.md5(generated_password.encode()).hexdigest()
 
 
 @app.route("/get_password", methods=["GET"])
 def get_password():
-    password = generate_password()
-    response = jsonify({"password": password})
+
+    response = jsonify({"password": generated_password})
     with open("password.json", "w") as f:
-        json.dump({"password": password}, f)
+        json.dump({"password": generated_password}, f)
     return response
 
 
@@ -38,4 +40,5 @@ def check_password():
 
 
 if __name__ == "__main__":
+    generate_password()
     app.run()
