@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb12f3fe-bfa7-43dd-a3e7-f5f016a877dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/password_breaker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/password_breaker_mp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_password.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/passwordapi.py" beforeDir="false" afterPath="$PROJECT_DIR$/passwordapi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pi_ multiprocessing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/password_breaker.py" beforeDir="false" afterPath="$PROJECT_DIR$/password_breaker.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +37,7 @@
   "keyToString": {
     "Python.generate_password.executor": "Run",
     "Python.password_breaker.executor": "Run",
+    "Python.password_breaker_mp.executor": "Run",
     "Python.passwordapi.executor": "Run",
     "Python.pi_ multiprocessing.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",

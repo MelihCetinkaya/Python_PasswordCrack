@@ -1,8 +1,8 @@
 import multiprocessing
-import random
+import requests
+import hashlib
 import string
 import os
-from time import sleep
 
 def generate_password() -> str:
     def recursive_generate(current, remaining_length):
@@ -20,6 +20,27 @@ def generate_password() -> str:
 def brute_force(id : int):
     for combination in generate_password():
         print(str(id) + "th Core Working... " + combination)
+        response = requests.get("http://127.0.0.1:5000/get_password")
+
+        if response.status_code == 200:
+            print(f"Generated password: {combination}")
+
+            # Şifreyi MD5 hash'ine çevir
+            password_hash = hashlib.md5(combination.encode()).hexdigest()
+
+            # Flask uygulamasına /check_password isteğini göndererek doğru olup olmadığını kontrol et
+            check_response = requests.post(
+                "http://127.0.0.1:5000/check_password",
+                json={"password": combination}
+            )
+
+            if check_response.status_code == 200:
+                result = check_response.json()
+                print(f"Password check result: {result['message']}")
+            else:
+                print("Error occurred while checking password.")
+        else:
+            print("Failed to retrieve password.")
 
 
 if __name__ == "__main__":
