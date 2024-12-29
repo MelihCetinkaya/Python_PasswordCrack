@@ -23,7 +23,7 @@ def generate_password() -> str:
                 yield from recursive_generate(current + char, remaining_length - 1)
 
     #for length in range(8, 16 + 1):
-    yield from recursive_generate("", 5)
+    yield from recursive_generate("", 6)
 
 def brute_force(process_id: int, target_hash: str, last_index, passwd_found):
     """Şifre kombinasyonlarını deneyerek doğru olanı bulmaya çalışır."""
@@ -49,7 +49,7 @@ def brute_force(process_id: int, target_hash: str, last_index, passwd_found):
             passwd = first_char + combination
             password_hash = hashlib.md5(passwd.encode()).hexdigest()
 
-            print(f"[Process {process_id}] Trying password: {passwd} ")
+            #print(f"[Process {process_id}] Trying password: {passwd} ")
 
             if password_hash == target_hash:
                 check_response = requests.post(
